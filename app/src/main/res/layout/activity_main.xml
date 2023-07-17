@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="-14dp">
+
+    <EditText
+        android:id="@+id/portID"
+        android:layout_width="95dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="44dp"
+        android:autofillHints="8080"
+        android:hint="Port"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/OnTraining"
+        app:layout_constraintVertical_bias="0.039" />
+
+    <EditText
+        android:id="@+id/addressID"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:autofillHints="192.168.1.5"
+        android:hint="Server IP"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/portID"
+        app:layout_constraintEnd_toStartOf="@+id/portID"
+        app:layout_constraintHorizontal_bias="0.625"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/OnTraining"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/connectID"
+        android:layout_width="201dp"
+        android:layout_height="55dp"
+        android:backgroundTint="@color/green"
+        android:onClick="connect"
+        android:text="Connect to server"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/portID"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toStartOf="@+id/addressID"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.282" />
+
+    <Button
+        android:id="@+id/trainingID"
+        android:layout_width="201dp"
+        android:layout_height="55dp"
+        android:backgroundTint="@color/green"
+        android:enabled="false"
+        android:onClick="startTraining"
+        android:text="Start Training"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/dataLoaderID"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/dataLoaderID"
+        app:layout_constraintTop_toBottomOf="@+id/dataLoaderID"
+        app:layout_constraintVertical_bias="0.084" />
+
+    <Button
+        android:id="@+id/dataLoaderID"
+        android:layout_width="201dp"
+        android:layout_height="55dp"
+        android:backgroundTint="@color/green"
+        android:onClick="loadData"
+        android:text="Load data"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/client_id"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="@+id/client_id"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/client_id"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:hint="Client ID (1 - 10)"
+        app:layout_constraintBottom_toTopOf="@+id/dataLoaderID"
+        app:layout_constraintEnd_toEndOf="@+id/connectID"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="@+id/connectID"
+        app:layout_constraintTop_toBottomOf="@+id/connectID" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/resultID"
+        android:layout_width="380dp"
+        android:layout_height="175dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/rounded_corner"
+        android:gravity="top"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:nestedScrollingEnabled="true"
+        android:overScrollMode="always"
+        android:scrollbarAlwaysDrawHorizontalTrack="false"
+        android:scrollbars="vertical"
+        android:text="Status"
+        android:clickable="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        android:verticalScrollbarPosition="defaultPosition"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.968" />
+
+    <TextView
+        android:id="@+id/OnTraining"
+        android:layout_width="409dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="100dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="FedMobile"
+        android:textAlignment="center"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.052" />
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="385dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Activity log"
+        android:scrollbars = "vertical"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/resultID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.423"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/trainingID"
+        app:layout_constraintVertical_bias="1.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>
