@@ -14,10 +14,13 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.Flask_API"
+        android:hardwareAccelerated="false"
+        android:largeHeap="true"
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
             android:label="Flask_API"
+            android:windowSoftInputMode="adjustNothing"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
